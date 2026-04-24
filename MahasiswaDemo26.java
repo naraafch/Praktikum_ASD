@@ -23,7 +23,7 @@ public class MahasiswaDemo26 {
                     String nim= sc.nextLine();
                     System.out.print("Kelas : ");
                     String kelas= sc.nextLine();
-                    Mahasiswa26 mhs= new Mahasiswa26(nim, nama, kelas);
+                    Mahasiswa26 mhs= new Mahasiswa26(nama, nim, kelas);
                     stack.push(mhs);
                     System.out.printf("Tugas %s berhasil dikumpulkan\n", mhs.nama);
                     break;
@@ -58,5 +58,4 @@ public class MahasiswaDemo26 {
             } 
         } while(pilih>=1 && pilih<=4);
     }
-    
 }
