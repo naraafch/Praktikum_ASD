@@ -39,12 +39,7 @@ public class SuratDemo26 {
                     Surat26 proses= stack.pop();
                     if(proses!=null) {
                         String jenis= (proses.jenisIzin=='S') ? "Sakit":"Izin";
-                        System.out.println("Nama          : "+proses.namaMahasiswa);
-                        System.out.println("ID Surat      : "+proses.idSurat);
-                        System.out.println("Kelas         : "+proses.kelas);
-                        System.out.println("Jenis Izin    : "+jenis);
-                        System.out.println("Durasi        : "+proses.durasi+" hari");
-                        System.out.println("Status      : Surat berhasil diproses.");
+                        System.out.println("Surat izin ("+jenis+") dari "+proses.namaMahasiswa+" berhasil diproses");
                         System.out.println();
                     }
                     break;
@@ -52,12 +47,9 @@ public class SuratDemo26 {
                 case 3:
                     Surat26 teratas= stack.peek();
                     if(teratas!=null) {
-                         String jenis= (teratas.jenisIzin=='S') ? "Sakit":"Izin";
-                        System.out.println("  ID Surat   : "+teratas.idSurat);
-                        System.out.println("  Nama       : "+teratas.namaMahasiswa);
-                        System.out.println("  Kelas      : "+teratas.kelas);
-                        System.out.println("  Jenis Izin : "+jenis);
-                        System.out.println("  Durasi     : "+teratas.durasi+" hari");
+                        String jenis= (teratas.jenisIzin=='S') ? "Sakit":"Izin";
+                        System.out.printf("%-10s %-20s %-8s %-15s %-8s%n", "ID Surat", "Nama Mahasiswa", "Kelas", "Jenis Izin", "Durasi (Hari)");
+                        System.out.printf("%-10s %-20s %-8s %-15s %-8s%n", teratas.idSurat, teratas.namaMahasiswa, teratas.kelas, jenis, teratas.durasi);
                         System.out.println();
                     }
                     break;
@@ -81,5 +73,4 @@ public class SuratDemo26 {
             }
         } while (pilih>0 && pilih<=5);
     }
-    
 }
