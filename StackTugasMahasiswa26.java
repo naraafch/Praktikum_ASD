@@ -48,7 +48,7 @@ public class StackTugasMahasiswa26 {
         if(!isEmpty()) {
             return stack[top];
         } else {
-            System.out.println("Stack kosong! Tidak ");
+            System.out.println("Stack kosong! Tidak ada tugas untuk dikumpulkan");
             return null;
         }
     }
@@ -58,6 +58,15 @@ public class StackTugasMahasiswa26 {
             System.out.println(stack[i].nama+"\t"+stack[i].nim+"\t"+stack[i].kelas);
         }
         System.out.println("");
+    } 
+
+    public Mahasiswa26 lihatTugasTerbawah() {
+        if(!isEmpty()) {
+            return stack[0];
+        } else {
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan");
+
+            return null;
+        } 
     }
-    
 }
