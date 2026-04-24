@@ -65,8 +65,11 @@ public class StackTugasMahasiswa26 {
             return stack[0];
         } else {
             System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan");
-
             return null;
         } 
+    }
+
+    public int jumlahTugas() {
+        return top+1;
     }
 }
