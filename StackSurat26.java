@@ -54,28 +54,28 @@ public class StackSurat26 {
     }
 
     public void print() {
+    System.out.printf("%-10s %-20s %-8s %-15s %-8s %n", "ID Surat", "Nama Mahasiswa", "Kelas", "Jenis Izin", "Durasi (Hari)");
     for(int i=0; i<=top; i++) {
-        System.out.println(stack[i].idSurat+"\t"+stack[i].namaMahasiswa+"\t"+stack[i].kelas+"\t"+stack[i].jenisIzin+"\t"+stack[i].durasi);
+        System.out.printf("%-10s %-20s %-8s %-15s %-8d %n", stack[i].idSurat, stack[i].namaMahasiswa, stack[i].kelas, stack[i].jenisIzin, stack[i].durasi);
     }
     System.out.println("");
     } 
 
     public void cariSurat(String nama) {
         boolean ditemukan= false;
-        for(int i=0; i<=top;  i++) {
+        for(int i=0; i<=top; i++) {
             if(stack[i].namaMahasiswa.equalsIgnoreCase(nama)) {
                 if(!ditemukan) {
-                    System.out.printf("%-10s %-20s %-8s %-10s %-8s%n", "ID Surat", "Nama Mahasiswa", "Kelas", "Jenis Izin", "Durasi");
+                    System.out.printf("%-10s %-20s %-8s %-15s %-8s %n", "ID Surat", "Nama Mahasiswa", "Kelas", "Jenis Izin", "Durasi (Hari)");
                 }
-            String jenis = (stack[i].jenisIzin == 'S' || stack[i].jenisIzin == 's') ? "Sakit" : "Izin";
-            System.out.printf("%-10s %-20s %-8s %-10s %-8d hari%n", stack[i].idSurat, stack[i].namaMahasiswa, stack[i].kelas, jenis, stack[i].durasi);
-            ditemukan = true;
+            String jenis= (stack[i].jenisIzin=='S' || stack[i].jenisIzin=='s') ? "Sakit":"Izin";
+            System.out.printf("%-10s %-20s %-8s %-15s %-8d %n", stack[i].idSurat, stack[i].namaMahasiswa, stack[i].kelas, jenis, stack[i].durasi);
+            ditemukan= true;
             }
         }
         if (!ditemukan) {
-            System.out.println("Surat izin atas nama \"" + nama + "\" tidak ditemukan.");
+            System.out.println("Surat izin atas nama "+nama+" tidak ditemukan.");
         }
         System.out.println();
     }
-
 }
